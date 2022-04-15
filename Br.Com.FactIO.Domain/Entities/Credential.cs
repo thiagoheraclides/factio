@@ -8,7 +8,7 @@
         public string Password { get; private set; }
         public bool Status { get; private set; }
 
-        public static Credential CreateCredencial(string login, string password, string loggedUser)
+        public static Credential CreateCredential(string login, string password, string loggedUser)
         {
             return new Credential
             {

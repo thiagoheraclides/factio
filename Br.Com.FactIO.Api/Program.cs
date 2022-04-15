@@ -1,11 +1,18 @@
 using Br.Com.FactIO.Api.Options;
+using Br.Com.FactIO.Application.Identity.Commands;
 using Br.Com.FactIO.Application.Options;
 using Br.Com.FactIO.Application.Services;
+using Br.Com.FactIO.Domain.Repositories;
+using Br.Com.FactIO.Infra.Context;
+using Br.Com.FactIO.Infra.Repositories;
+using Br.Com.FactIO.Infra.UnitOfWork;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -62,6 +69,13 @@ builder.Services
         jwt.ClaimsIssuer = jwtSettings.Issuer;
     });
 
+builder.Services.Add(new ServiceDescriptor(typeof(DataContext), new DataContext(builder.Configuration.GetConnectionString("WebApiDatabase"))));
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IUserTypeRepository, UserTypeRepository>();
+builder.Services.AddTransient<IUserRoleRepository, UserRoleRepository>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddMediatR(typeof(LoginCommand));
 builder.Services.AddScoped<IdentityService>();
 
 var app = builder.Build();

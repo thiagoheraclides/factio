@@ -8,8 +8,8 @@ namespace Br.Com.FactIO.Domain.Type
 {
     public static class UserType
     {
-        public const string Super = "Super User";
-        public const string Base = "Base User";
+        public const string Super = "Super";
+        public const string Base = "Base";
 
     }
 }
