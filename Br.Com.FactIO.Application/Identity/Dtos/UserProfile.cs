@@ -9,7 +9,7 @@
         public string RoleId { get; set; }
         public string RoleDescription { get; set; }
         public string TypeId { get; set; }
-        public string TypeDesccription { get; set; }
+        public string TypeDescription { get; set; }
         public string Token { get; set; }
     }
 }

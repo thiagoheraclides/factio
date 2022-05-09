@@ -43,7 +43,7 @@ namespace Br.Com.FactIO.Application.Identity.CommandHandlers
             _result.Payload.FirstName = user.FirstName;
             _result.Payload.LastName = user.LastName;
             _result.Payload.TypeId = user.UserType.Id.ToString();
-            _result.Payload.TypeDesccription = user.UserType.Type;
+            _result.Payload.TypeDescription = user.UserType.Type;
             _result.Payload.RoleId = user.UserRole.Id.ToString();
             _result.Payload.RoleDescription = user.UserRole.Role;
             _result.Payload.Token = GetJwtString(user);

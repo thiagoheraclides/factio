@@ -10,5 +10,29 @@
             public const string Register = "Register";
         }
 
+        public static class Company
+        {
+            public const string Add = "Add";
+            public const string Id = "{id}";
+        }
+
+        public static class Category
+        {           
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
+
+        public static class CostCenter
+        {
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
+
+        public static class Group
+        {
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
+
     }
 }

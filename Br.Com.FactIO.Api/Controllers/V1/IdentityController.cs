@@ -3,7 +3,10 @@ using Br.Com.FactIO.Api.Contracts.Identity;
 using Br.Com.FactIO.Application.Identity.Commands;
 using Br.Com.FactIO.Application.Identity.Dtos;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Br.Com.FactIO.Api.Controllers.V1
 {
@@ -23,8 +26,10 @@ namespace Br.Com.FactIO.Api.Controllers.V1
 
         [HttpPost]
         [Route("Register")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> Register(UserRegistration userRegistration, CancellationToken cancellationToken)
         {
+            var claims = HttpContext.User.Identity as ClaimsIdentity;
             return Ok();
         }
 

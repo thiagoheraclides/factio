@@ -42,6 +42,11 @@ namespace Br.Com.FactIO.Infra.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<int> DeleteAsync(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<User>> GetAllAsync()
         {
             throw new NotImplementedException();

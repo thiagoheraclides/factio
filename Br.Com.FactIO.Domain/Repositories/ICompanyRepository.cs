@@ -2,7 +2,7 @@
 
 namespace Br.Com.FactIO.Domain.Repositories
 {
-    public interface IContactRepository : IGenericRepository<Contact>
+    public interface ICompanyRepository : IGenericRepository<Company>
     {
 
     }
