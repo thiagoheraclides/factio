@@ -13,6 +13,11 @@ namespace Br.Com.FactIO.Infra.UnitOfWork
         public ICategoryRepository CategoryRepository { get; }
         public ICostCenterRepository CostCenterRepository { get; }
         public IGroupRepository GroupRepository { get; }
+        public IStatusRepository StatusRepository { get; }
+        public ISiteRepository SiteRepository { get; }
+        public IAreaRepository AreaRepository { get; }
+        public IAddressRepository AddressRepository { get; }
+        public IZoneRepository ZoneRepository { get; }
 
         public UnitOfWork(
             IUserRepository userRepository,
@@ -21,7 +26,12 @@ namespace Br.Com.FactIO.Infra.UnitOfWork
             ICompanyRepository companyRepository,
             ICategoryRepository categoryRepository,
             ICostCenterRepository costCenterRepository,
-            IGroupRepository groupRepository)
+            IGroupRepository groupRepository,
+            IStatusRepository statusRepository,
+            ISiteRepository siteRepository,
+            IAreaRepository areaRepository,
+            IAddressRepository addressRepository,
+            IZoneRepository zoneRepository)
         {
             UserRepository = userRepository;
             UserTypeRepository = userTypeRepository;
@@ -30,6 +40,11 @@ namespace Br.Com.FactIO.Infra.UnitOfWork
             CategoryRepository = categoryRepository;
             CostCenterRepository = costCenterRepository;
             GroupRepository = groupRepository;
+            StatusRepository = statusRepository;
+            SiteRepository = siteRepository;
+            AreaRepository = areaRepository;
+            AddressRepository = addressRepository;
+            ZoneRepository = zoneRepository;
         }
     }
 }

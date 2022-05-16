@@ -9,6 +9,11 @@
         ICategoryRepository CategoryRepository { get; }
         ICostCenterRepository CostCenterRepository { get; }
         IGroupRepository GroupRepository { get; }
+        IStatusRepository StatusRepository { get; }
+        ISiteRepository SiteRepository { get; }
+        IAreaRepository AreaRepository { get; }
+        IAddressRepository AddressRepository { get; }
+        IZoneRepository ZoneRepository { get; }
 
     }
 }

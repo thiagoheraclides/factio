@@ -34,5 +34,34 @@
             public const string Add = "Add";
         }
 
+        public static class Status
+        {
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
+
+        public static class Site
+        {
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
+
+        public static class Area
+        {
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
+
+        public static class Address
+        {
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
+
+        public static class Zone
+        {
+            public const string Id = "{id}";
+            public const string Add = "Add";
+        }
     }
 }
